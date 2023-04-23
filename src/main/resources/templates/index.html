@@ -22,45 +22,27 @@
   <nav class="navbar navbar-expand-lg bg-dark" th:include="div :: div"></nav>
 
   <div class="container text-center my-5">
-    <h1>Welcame to Cipher_Works..</h1>
+    <h2>Welcame to Cipher_Works..</h2>
 
 
 
   </div>
-  <div class="container my-4 p-5 center" style="border: 1px dotted black;">
+  <div class="container my-4 p-4 center" style="border: 1px dotted black;">
     <h4 class="text-center pb-4">Cipher_Works</h4>
     <form class="col-md-4 offset-md-4"  method="post" th:action="@{cifras/save}" >
-      <div class="mb-2">
-        <input type="text" class="form-control" name="cesar" placeholder="Insira o texto simples!">
-        <input type="hidden" class="form-control" name="hill" placeholder="Insira o texto simples!">
-        <input type="hidden" class="form-control" name="vigenere" placeholder="Insira o texto simples!">
-      </div>
+      <div class="mb-4">
+        <input type="text" class="form-control" name="textoSimples" placeholder="Insira o texto simples!">
+        <input type="hidden" value="teste" class="form-control" name="cesar" placeholder="Insira o texto simples!">
+        <input type="hidden" value="teste" class="form-control" name="hill" placeholder="Insira o texto simples!">
+        <input type="hidden" value="teste" class="form-control" name="vigenere" placeholder="Insira o texto simples!">
+      </div><br>
       
-      <center> <button type="submit" class="btn btn-primary">Cifrar</button></center>
+      <div class="d-grid gap-2 col-6 mx-auto">
+        <button class="btn btn-primary" type="submit">Cifrar</button>
+      </div>
     </form><br>
 
     
-    <table class="table table-hover">
-      <thead>
-        <tr>
-          <th scope="col">Type</th>
-          <th scope="col">Resultado</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th scope="row">1.Cifra de Cesar</th>
-          <td>Mark</td>
-        </tr>
-        <tr>
-          <th scope="row">2. Cifra de Hill</th>
-          <td>Jacob</td>
-        <tr>
-          <th scope="row">3. Cifra de Vigenère</th>
-          <td>@twitter</td>
-        </tr>
-      </tbody>
-    </table>
   </div>
 
 
