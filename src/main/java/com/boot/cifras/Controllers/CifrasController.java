@@ -1,6 +1,5 @@
 package com.boot.cifras.Controllers;
 
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -17,50 +16,62 @@ import com.boot.cifras.Service.CifrasService;
 @RequestMapping("/cifras")
 public class CifrasController {
 
-         @Autowired
-         private CifrasService cifrasservice;
+  @Autowired
+  private CifrasService cifrasservice;
 
-         @PostMapping("/save")
-         public String addRecrutadora(Cifras c) {
+  @PostMapping("/save")
+  public String addRecrutadora(Cifras c) {
 
-                  String palavra = c.getTextoSimples().toUpperCase();
-                  int deslocamento = 3;
-                  String palavraCifrada = "";
+    String palavra = c.getTextoSimples().toUpperCase();
+    int deslocamento = 3;
+    String palavraCifrada = "";
 
-                  for (int i = 0; i < palavra.length(); i++) {
-                           char caractere = palavra.charAt(i);
-                           if (caractere != ' ') {
-                                    
-                          
-                           if (caractere >= 'a' && caractere <= 'z') {
-                                    caractere = (char) ((caractere - 'a' + deslocamento) % 26 + 'a');
-                           } else if (caractere >= 'A' && caractere <= 'Z') {
-                                    caractere = (char) ((caractere - 'A' + deslocamento) % 26 + 'A');
-                           }
-                           palavraCifrada += caractere;
-                  }
-                  }
+    for (int i = 0; i < palavra.length(); i++) {
+      char caractere = palavra.charAt(i);
+      if (caractere != ' ') {
 
-                  c.setCesar(palavraCifrada);
+        if (caractere >= 'a' && caractere <= 'z') {
+          caractere = (char) ((caractere - 'a' + deslocamento) % 26 + 'a');
+        } else if (caractere >= 'A' && caractere <= 'Z') {
+          caractere = (char) ((caractere - 'A' + deslocamento) % 26 + 'A');
+        }
+        palavraCifrada += caractere;
+      }
+    }
 
-                  cifrasservice.save(c);
+    // viginere
 
-                  return "redirect:/cifras/result/"+c.getId();
+    // String Str = palavra;
+    // String Keyword = Str;
+    // Viginere v = new Viginere();
 
-         }
+    // String str = v.LowerToUpper(Str);
+    // String keyword = v.LowerToUpper(Keyword);
 
+    // String key = v.generateKey(str, keyword);
+    // String cipher_text = v.cipherText(str, key);
 
-         @GetMapping("/result/{id}")
-         public ModelAndView dados(@PathVariable("id") int id, Model model) {
-           Cifras c = cifrasservice.getCifraById(id);
-           model.addAttribute("cifra", c);
-       
-           ModelAndView m = new ModelAndView();
-      
-           m.setViewName("/resultado");
-       
-           return m;
-       
-         }
+    // c.setVigenere(cipher_text);
+
+    c.setCesar(palavraCifrada);
+
+    cifrasservice.save(c);
+
+    return "redirect:/cifras/result/" + c.getId();
+
+  }
+
+  @GetMapping("/result/{id}")
+  public ModelAndView dados(@PathVariable("id") int id, Model model) {
+    Cifras c = cifrasservice.getCifraById(id);
+    model.addAttribute("cifra", c);
+
+    ModelAndView m = new ModelAndView();
+
+    m.setViewName("/resultado");
+
+    return m;
+
+  }
 
 }
