@@ -8,8 +8,6 @@ import org.springframework.stereotype.Service;
 import com.boot.cifras.Model.Cifras;
 import com.boot.cifras.Repository.CifrasRepository;
 
-
-
 @Service
 public class CifrasService {
 
@@ -24,15 +22,13 @@ public class CifrasService {
                   return cifrasRepository.findAll();
          }
 
-
          public Cifras getCifraById(Integer id) {
                   return cifrasRepository.findById(id).get();
          }
 
          // public void deleteById(int id) {
-         //          cifrasRepository.deleteById(id);
+         // cifrasRepository.deleteById(id);
 
          // }
 
-        
 }
