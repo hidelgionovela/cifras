@@ -26,9 +26,5 @@ public class CifrasService {
                   return cifrasRepository.findById(id).get();
          }
 
-         // public void deleteById(int id) {
-         // cifrasRepository.deleteById(id);
-
-         // }
 
 }
