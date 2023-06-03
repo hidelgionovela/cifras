@@ -22,19 +22,17 @@
          <nav class="navbar navbar-expand-lg bg-dark" ><div th:replace="~{fragment/div}"></div></nav>
 
   <div class="container text-center my-5">
-    <h2>Cifra De Tranposicao Colunar</h2>
+    <h2>Cifra de Transposição Colunar</h2>
 
 
 
   </div>
   <div class="container my-4 p-4 center" style="border: 1px dotted black;">
     <h4 class="text-center pb-4">Cipher_Works</h4>
-    <form class="col-md-4 offset-md-4" method="post" th:action="@{cifras/save}">
+    <form class="col-md-4 offset-md-4" method="post" th:action="@{/saveColunar}">
       <div class="mb-4">
-        <input type="text" class="form-control" name="textoSimples" placeholder="Insira o texto simples!">
-        <input type="text" value="teste" class="form-control" name="cesar" placeholder="Insira a chave">
-        <input type="hidden" value="teste" class="form-control" name="hill" placeholder="Insira o texto simples!">
-        <input type="hidden" value="teste" class="form-control" name="vigenere" placeholder="Insira o texto simples!">
+        <input type="text" class="form-control mb-4" name="textoSimples" placeholder="Insira o texto simples!">
+        <input type="text" class="form-control" name="chave" placeholder="Insira a Chave!">
       </div><br>
 
       <div class="d-grid gap-2 col-6 mx-auto">
