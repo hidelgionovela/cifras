@@ -13,7 +13,6 @@ import com.boot.cifras.Model.Playfair;
 import com.boot.cifras.Service.PlayfairService;
 
 @Controller
-// @RequestMapping("/playfair")
 public class PlayfairController {
 
 
