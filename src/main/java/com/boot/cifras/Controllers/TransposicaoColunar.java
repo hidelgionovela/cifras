@@ -87,15 +87,17 @@ public class TransposicaoColunar {
           * @return O texto cifrado.
           */
          public  String cifrar(String textoClaro, String chaveEscolhida) {
-                  int min, i, j;
-                  char chaveOriginal[] = chaveEscolhida.toCharArray();
-                  char temp;
+                  // int min, i, j;
+                  int  i, j;
+                  // char chaveOriginal[] = chaveEscolhida.toCharArray();
+                  // char temp;
                   ordenaChave(chaveEscolhida);
 
                   int linha = textoClaro.length() / chaveEscolhida.length();
                   int extrabit = textoClaro.length() % chaveEscolhida.length();
                   int linhaExtra = (extrabit == 0) ? 0 : 1;
-                  int rowtemp = -1, coltemp = -1;
+                  // int rowtemp = -1;
+                  int coltemp = -1;
                   int totallen = (linha + linhaExtra) * chaveEscolhida.length();
                   char pmat[][] = new char[(linha + linhaExtra)][(chaveEscolhida.length())];
                   char encry[] = new char[totallen];
