@@ -86,9 +86,9 @@ public class TransposicaoColunar {
           * @param chaveEscolhida A chave escolhida para a cifra.
           * @return O texto cifrado.
           */
-         public  String cifrar(String textoClaro, String chaveEscolhida) {
+         public String cifrar(String textoClaro, String chaveEscolhida) {
                   // int min, i, j;
-                  int  i, j;
+                  int i, j;
                   // char chaveOriginal[] = chaveEscolhida.toCharArray();
                   // char temp;
                   ordenaChave(chaveEscolhida);
