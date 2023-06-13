@@ -15,7 +15,6 @@ import com.boot.cifras.Service.PlayfairService;
 @Controller
 public class PlayfairController {
 
-
          @Autowired
          private PlayfairService cifrasservice;
 
@@ -41,7 +40,7 @@ public class PlayfairController {
 
                   cifrasservice.save(p);
 
-                  return "redirect:/resultadoPlayfair/"+p.getId();
+                  return "redirect:/resultadoPlayfair/" + p.getId();
 
          }
 
