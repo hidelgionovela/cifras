@@ -7,7 +7,7 @@ import jakarta.persistence.Table;
 @Entity
 @Table(name = "playfair")
 public class Playfair extends AbstractEntity<Long> {
-         
+
          @Column(name = "textoSimples", nullable = true, length = 500)
          private String textoSimples;
          @Column(name = "chave", nullable = true, length = 500)
@@ -20,28 +20,33 @@ public class Playfair extends AbstractEntity<Long> {
          public String getTextoSimples() {
                   return textoSimples;
          }
+
          public void setTextoSimples(String textoSimples) {
                   this.textoSimples = textoSimples;
          }
+
          public String getChave() {
                   return chave;
          }
+
          public void setChave(String chave) {
                   this.chave = chave;
          }
+
          public String getTextoCifrado() {
                   return textoCifrado;
          }
+
          public void setTextoCifrado(String textoCifrado) {
                   this.textoCifrado = textoCifrado;
          }
+
          public String getTextoDecifrado() {
                   return textoDecifrado;
          }
+
          public void setTextoDecifrado(String textoDecifrado) {
                   this.textoDecifrado = textoDecifrado;
          }
-
-         
 
 }
